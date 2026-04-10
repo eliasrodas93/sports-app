@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Leagues</h1>
+  <div class="filter-container">
+    <input
+      type="text"
+      id="leagueSearch"
+      placeholder="Search leagues by name..."
+      class="filter-input"
+    />
+
+    <select id="sportFilter" class="filter-select">
+      <!--options could come from an api request and this could be set inside a @for-->
+      <option value="">All Sports</option>
+      <option value="soccer">Soccer</option>
+      <option value="basketball">Basketball</option>
+      <option value="motorsport">Motorsport</option>
+    </select>
+  </div>
+  <div class="card-container">
+    @for (element of allLeagues(); track $index) {
+      <app-card [leagueData]="element" />
+    }
+  </div>
+</div>

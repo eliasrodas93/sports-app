@@ -1,0 +1,19 @@
+<div
+  class="card"
+  (click)="fetchSeasonBadge(leagueData().idLeague)"
+  [class]="{ 'show-backside': isCardFlipped() }"
+>
+  <div class="card-content">
+    <div class="card-front">
+      <h3>{{ leagueData().strLeague }}</h3>
+      <p>{{ leagueData().strSport }}</p>
+      <p>{{ leagueData().strLeagueAlternate }}</p>
+    </div>
+    <div class="card-back">
+      <img
+        [src]="badgeData()?.strBadge"
+        alt="Season badge image for {{ badgeData()?.strSeason }}"
+      />
+    </div>
+  </div>
+</div>
